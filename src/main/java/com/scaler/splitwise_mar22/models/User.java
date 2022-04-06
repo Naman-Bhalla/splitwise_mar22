@@ -1,5 +1,6 @@
 package com.scaler.splitwise_mar22.models;
 
+import com.scaler.splitwise_mar22.dtos.UserDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +15,13 @@ public class User extends BaseModel {
   private String name;
   private String phoneNumber;
   private String hashedPassword;
+
+  public UserDTO toDto() {
+    UserDTO userDTO = new UserDTO();
+    userDTO.setPhoneNumber(phoneNumber);
+    userDTO.setName(name);
+    return userDTO;
+  }
 }
 
 // User -> user

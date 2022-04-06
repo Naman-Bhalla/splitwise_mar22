@@ -19,8 +19,9 @@ public class Expense extends BaseModel {
     // curent_class TO attribute_class
     // expense TO user
     //   M     TO  1
-    @ManyToOne
+    @ManyToOne // Hibernate ORM
     private User createdBy;
+
     private String description;
 
     @ElementCollection
@@ -34,3 +35,5 @@ public class Expense extends BaseModel {
 // A -> as
 // User -> users
 // Game -> games
+
+// Project Building - 1 class on ORM

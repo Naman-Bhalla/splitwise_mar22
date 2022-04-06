@@ -8,8 +8,12 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class UserController {
-    @Autowired
     private UserService userService;
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     public  ResponseDTO<RegisterUserResponseDTO> registerUser(
             RegisterUserRequestDTO request
@@ -30,5 +34,10 @@ public class UserController {
         response.getData().setUser(userDTO);
 
         return response;
+    }
+
+    // /users/settleUp
+    public SettleUpResponseDTO settleUp(SettleUpUserRequestDTO request) {
+        return null;
     }
 }
